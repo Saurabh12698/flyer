@@ -1,0 +1,199 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<title>
+image-upload
+</title>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+}    
+
+.flyermob-createcomm{
+    width: 95%;
+    margin: 40px auto;
+    font-family: 'Arvo', serif;
+} 
+
+.flyermob-createcomm-top{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    border-bottom: 1px solid #d9d9d9;;
+    box-sizing: content-box;
+    padding: 2% 0%;
+}    
+
+.flyermob-createcomm-create-button{
+    float: right;
+    padding: 4%;
+    color: white;
+    background: #009fff;
+    border: 0;
+    width: 45%;
+    border-radius: 5px;
+    outline: none;
+}    
+
+.flyermob-createcomm-back{
+    width: 50%;
+    padding: 4% 3%;
+}
+
+.flyermob-createcomm-create{
+    width:50%;
+    padding: 2% 3%;
+} 
+
+.flyermob-imageupload-image{
+    width: 98%;
+    position: relative;
+    margin: 0 auto;
+    padding-top: 4%;
+}
+
+.uploaded-image-preview{
+    width: 100%;
+}
+
+.flyr-upload-icon{
+    position:absolute;
+    top: 43%;
+    left: 46%;
+}
+
+.file-upload-button{
+    font-size: 25px;
+}
+
+.file-upload{
+    display: none;
+}
+
+.flyermob-createcomm-name{
+    width: 98%;
+    box-sizing: border-box;
+    padding: 2% 1%;
+    margin: 12px auto;
+    border: 1px solid #d8d8d8;
+}
+
+.flyermob-createcomm-name--input{
+    width: 100%;
+    outline: none;
+    border: none;
+}
+
+.flyermob-createcomm-type{
+    display: flex;
+    flex-direction: column;
+    padding: 2% 0%;
+}
+
+.flyermob-createcomm-typelabel{
+    padding:2% 2%;
+    color: #616161;
+    font-weight:bold;
+    font-size: 15px;
+}
+
+.flyermob-createcomm-typeselect{
+    width: 98%;
+    margin: 0 auto;
+    padding: 2% 0%;
+    outline: none;
+    border: 1px solid #d8d8d8;
+}
+
+.flyermob-createcomm-ask{
+    width: 98%;
+    margin: auto;
+    padding: 4% 0%;
+    font-size: 15px;
+    font-weight: bold;
+    color: #616161;
+}
+</style>
+</head>
+<body>
+    <div class="flyermob-createcomm">
+        <div class="flyermob-createcomm-top">
+            <div class="flyermob-createcomm-back">
+                <a href="E:\Flyer\index.html">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            </div>
+            <div class="flyermob-createcomm-create">
+                <button class="flyermob-createcomm-create-button">Create</button>
+            </div>
+        </div>
+        <div class="flyermob-imageupload-image">
+            <img class="uploaded-image-preview" src="E:\Flyer\grey.jpeg">
+            <div class="flyr-upload-icon">
+                <i class="fa fa-camera file-upload-button"></i>
+                <input class="file-upload" type="file">
+            </div>
+        </div>
+        <div class="flyermob-createcomm-name">
+            <input type="text" placeholder="community-name" class="flyermob-createcomm-name--input">
+        </div>
+        <div class="flyermob-createcomm-type">
+            <span class="flyermob-createcomm-typelabel">Type</span>
+            <select name="cars" class="flyermob-createcomm-typeselect">
+                <option value="volvo">Public</option>
+                <option value="saab">Private</option>
+            </select>
+        </div>
+        <div class="flyermob-createcomm-type">
+            <span class="flyermob-createcomm-typelabel">Category</span>
+            <select name="cars" class="flyermob-createcomm-typeselect">
+                <option value="volvo">Public</option>
+                <option value="saab">Private</option>
+            </select>
+        </div>
+        <div class="flyermob-createcomm-type">
+            <span class="flyermob-createcomm-typelabel">Sub-Category</span>
+            <select name="cars" class="flyermob-createcomm-typeselect">
+                <option value="volvo">Public</option>
+                <option value="saab">Private</option>
+            </select>
+        </div>
+        <div class="flyermob-createcomm-ask">
+            <input type="checkbox" name="vehicle2" value="Car"> Ask Before posting
+        </div>
+    </div>
+<script>
+    $(document).ready(function() {
+
+    
+    var readURL = function(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('.uploaded-image-preview').attr('src', e.target.result);
+            }
+    
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    
+
+    $(".file-upload").on('change', function(){
+        readURL(this);
+        $(".flyr-upload-icon").hide();
+    });
+    
+    $(".file-upload-button").on('click', function() {
+       $(".file-upload").click();
+    });
+    });
+</script>       
+</body>
+</html>

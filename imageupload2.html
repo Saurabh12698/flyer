@@ -1,0 +1,198 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<title>
+image-upload
+</title>
+<style>
+*{
+    margin:0;
+    padding: 0;
+}
+
+.imageupload-container{
+    width: 100%;
+    margin: 40px auto;
+}
+
+.imageupload-topar{
+    position: relative;
+}
+
+.imageupload-image{
+    width: 100%;
+    height: 200px;
+    position: relative;
+    margin: 0 auto;
+    background: linear-gradient(to bottom, #0000005e 0%, #b7aeb36b 18%);
+}
+
+.imageupload-preview{
+    width: 100%;
+}
+
+.flyr-upload-icon{
+    position:absolute;
+    top: 43%;
+    left: 46%;
+}
+
+.file-upload-button{
+    font-size: 25px;
+}
+
+.file-upload{
+    display: none;
+}
+
+.imageupload-caption{
+    width: 98%;
+    margin: 0 auto;
+    padding: 4% 0% 3% 0%;
+    border-bottom: 1px solid #d8d8d8;
+}
+
+.imageupload-caption--input{
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 1% 2%;
+}
+
+.imageupload-commlabel{
+    width: 98%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 2% 2%;
+}
+
+
+/* Style the tab */
+.imageupload-tab {
+    display: flex;
+}
+
+.tablinks{
+    width: 33.33333%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: none;
+    border-bottom: 1px solid transparent;
+    padding: 14px 16px;
+    font-size: 17px;
+}
+
+
+/* Change background color of buttons on hover */
+/* .tablinks:hover {
+  background-color: #ddd;
+} */
+
+/* Create an active/current tablink class */
+.tablinks.active {
+  border-bottom:1px solid black;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border-top: none;
+}
+</style>
+</head>
+<body>
+    <div class="imageupload-container">
+        <div class="imageupload-topar">
+            <div class="imageupload-overlay">
+
+            </div>
+            <div class="imageupload-image">
+                <img class="imageupload-preview" src="">
+                <div class="flyr-upload-icon">
+                    <i class="fa fa-camera file-upload-button"></i>
+                    <input class="file-upload" type="file">
+                </div>
+            </div>
+        </div>
+        <div class="imageupload-caption">
+            <input type="text" class="imageupload-caption--input" placeholder="Write something here">
+        </div>
+        <div class="imageupload-commlabel">
+            <p>To</p>
+        </div>
+
+        <div class="imageupload-tab">
+            <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">London</button>
+            <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+            <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+        </div>
+              
+        <div id="London" class="tabcontent">
+            <h3>London</h3>
+            <p>London is the capital city of England.</p>
+        </div>
+              
+        <div id="Paris" class="tabcontent">
+            <h3>Paris</h3>
+            <p>Paris is the capital of France.</p> 
+        </div>
+              
+        <div id="Tokyo" class="tabcontent">
+            <h3>Tokyo</h3>
+            <p>Tokyo is the capital of Japan.</p>
+        </div>
+    </div>
+<script>
+    $(document).ready(function() {
+
+    
+    var readURL = function(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('.imageupload-preview').attr('src', e.target.result);
+            }
+    
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    
+
+    $(".file-upload").on('change', function(){
+        readURL(this);
+        $(".flyr-upload-icon").hide();
+    });
+    
+    $(".file-upload-button").on('click', function() {
+       $(".file-upload").click();
+    });
+});
+</script>   
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>  
+</body>
+</html>    

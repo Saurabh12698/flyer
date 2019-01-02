@@ -1,0 +1,517 @@
+ <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="login.css"> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<title>
+    Login
+</title>
+<style>
+
+*{
+  font-family: 'Work Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+body{
+  background: #f1f0f0;
+}
+p{
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+h1{
+  margin: 0;
+  padding: 0;
+}
+a{
+  margin: 0;
+  padding: 0;
+}
+::placeholder{
+  font-size:15px;
+  color: grey;
+}
+
+/* .shadowborder {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+} */
+
+/* .shadowborder:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+} */
+
+/*login----------------------------------------*/
+
+.loginpage-header{
+  position: fixed;
+    top: 0;
+    width: 100%;
+    background: #ffbc00;
+    height: 55px;
+}
+
+.loginpage-headerimg{
+  height: 50px;
+  width: 50px;
+  margin-left: 3%;
+}
+
+.loginpage-headerimg--img{
+  height: 100%;
+  width: 100%;
+}
+
+#loginpage-container{
+
+}
+
+.login-div{
+  width: 400px;
+  background-repeat: no-repeat;
+  margin: 40% auto auto auto;
+}
+
+.login-div-header{
+  text-align: center;
+  font-size: 15px;
+  font-weight: 300px;
+  color:grey;
+  padding: 0px 0px 10% 0px;
+}
+.login-div-username{
+  width: 330px;
+  margin: 0 auto;
+  padding: 2% 0% 2% 0%;
+}
+.login-div-username--input{
+  width: 100%;
+  border:0;
+  outline: none;
+  background: #f1f0f0;
+  font-size: 15px;
+  padding: 0px 0px 8px 0px;
+  border-bottom: 1px solid #c5c2c2;
+}
+.login-div-username--input:focus{
+  border-bottom:1px solid #ffbc00;
+  transition: 0.5s;
+}
+.login-div-password{
+  width: 330px;
+  margin: 2% auto;
+  padding: 3% 0% 3% 0%;
+}
+
+.login-div-password--input{
+  width: 100%;
+  border:0;
+  background: #f1f0f0;
+  font-size: 15px;
+  outline: none;
+  padding: 0px 0px 8px 0px;
+  border-bottom: 1px solid #c5c2c2;
+}
+.login-div-password--input:focus{
+  border-bottom:1px solid #ffbc00;
+  transition: 0.5s;
+}
+/* .activeusernameborder{
+  border-bottom: 2px solid yellow;
+  width: 360px;
+  margin: 0 auto;
+  padding: 8px 0px;
+} */
+.login-div-loginbtn{
+  width: 360px;
+    margin: 3% auto auto auto;
+    text-align: center;
+}
+.login-div-loginbtn--button{
+  width:150px;
+    padding: 2% 0px;
+    border-radius: 5px;
+    border: 0;
+    outline: none;
+    font-size: 15px;
+    font-weight: bold;
+    background: #ffbc00;
+}
+.login-div-loginbtn--button:hover{
+  background-color: #d8b657;
+  transition: 0.5s;
+}
+.login-div-signuplink{
+  width: 331px;
+    margin: 5% auto 0% auto;
+    color: #00a8ff;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+}
+
+.login-div-signuplink:hover{
+  color: #3090c1;
+  transition: 0.5s;
+}
+.login-div-forget{
+  width: 331px;
+    margin: 8% auto 0% auto;
+    color: #00a8ff;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+}
+.login-div-forget:hover{
+  color: #3090c1;
+  transition: 0.5s;
+}
+
+
+/*signup---------------------------------*/
+.signup-div{
+  transition: 0.5s;
+    width: 400px;
+    margin: 30% auto auto auto;
+}
+.signup-div-header{
+  text-align: center;
+  font-size: 14px;
+  font-weight: 300px;
+  color:grey;
+}
+
+.signup-div-fname{
+  width: 330px;
+  margin: 5% auto;
+  padding: 15px 0px 0px 0px;
+}
+.signup-div-fname--input{
+  width: 100%;
+  border:0;
+  background: #f1f0f0;
+  outline: none;
+  font-size: 15px;
+  padding: 0px 0px 8px 0px;
+  border-bottom: 1px solid #c5c2c2;
+}
+
+.signup-div-lname{
+  width: 330px;
+  margin:5% auto;
+  padding: 15px 0px 0px 0px;
+}
+.signup-div-lname--input{
+  width: 100%;
+  border:0;
+  outline: none;
+  background: #f1f0f0;
+  font-size: 15px;
+  padding: 0px 0px 8px 0px;
+  border-bottom: 1px solid #c5c2c2;
+}
+
+.signup-div-gender{
+  width: 330px;
+  margin: 5% auto;
+  padding: 15px 0px 0px 0px;
+}
+.signup-div-gender-label{
+  color: #7e7e7e;
+  font-size: 15px;
+  padding-right: 3%;
+}
+
+.signup-div-gender-radio{
+
+}
+
+.signup-div-dob{
+  width: 330px;
+  margin: 5% auto;
+  padding: 28px 0px 0px 0px;
+}
+.signup-div-dob-label{
+  color: #7e7e7e;
+  font-size: 15px;
+}
+.signup-div-dob-label--input{
+  border: none;
+  margin-left: 15px;
+  background: #f1f0f0;
+  font-size: 15px;
+  outline: none;
+}
+
+.signup-div-email{
+  width: 330px;
+  margin: 5% auto;
+  padding: 15px 0px 0px 0px;
+}
+.signup-div-email--input{
+  width: 100%;
+  border:0;
+  outline: none;
+  background: #f1f0f0;
+  font-size: 15px;
+  padding: 0px 0px 8px 0px;
+  border-bottom: 1px solid #c5c2c2;
+}
+
+.signup-div-mobile{
+  width: 330px;
+  margin: 5% auto;
+  padding: 15px 0px 0px 0px;
+}
+.signup-div-mobile--input{
+  width: 100%;
+  border:0;
+  outline: none;
+  background: #f1f0f0;
+  font-size: 15px;
+  padding: 0px 0px 8px 0px;
+  border-bottom: 1px solid #c5c2c2;
+}
+
+.signup-div-password{
+  width: 330px;
+  margin: 5% auto;
+  padding: 15px 0px 0px 0px;
+}
+.signup-div-password--input{
+  width: 100%;
+  border:0;
+  outline: none;
+  background: #f1f0f0;
+  font-size: 15px;
+  padding: 0px 0px 8px 0px;
+  border-bottom: 1px solid #c5c2c2;
+}
+
+.signup-div-register{
+  width: 330px;
+  margin: 6% auto auto auto;
+  text-align: center;
+}
+.signup-div-register--button{
+  width: 150px;
+  border: 0;
+  outline: none;
+  padding: 3%;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  background : #ffbc00;
+}
+
+.signup-div-register-backbtn{
+  text-align: center;
+  padding: 3% 0%;
+}
+.signup-backbtn{
+  text-decoration: none;
+  color: #00a8ff;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.signup-div-register--button:hover{
+  background-color: #d8b657;
+  transition: 0.5s;
+}
+.signup-div-fname--input:focus{
+  border-bottom:1px solid #ffbc00;
+  transition: 0.5s;
+}
+.signup-div-lname--input:focus{
+  border-bottom:1px solid #ffbc00;
+  transition: 0.5s;
+}
+.signup-div-email--input:focus{
+  border-bottom:1px solid #ffbc00;
+  transition: 0.5s;
+}
+.signup-div-mobile--input:focus{
+  border-bottom:1px solid #ffbc00;
+  transition: 0.5s;
+}
+.signup-div-password--input:focus{
+  border-bottom:1px solid #ffbc00;
+  transition: 0.5s;
+}
+
+/*forgot---------------------------------------*/
+.forgot-div{
+  width:400px;
+  margin: 120px auto auto auto;
+  padding: 30px 0px;
+}
+
+.forgot-div-header1{
+  color: #ffbc00;
+  text-align: center;
+}
+.forgot-div-header2{
+  width: 360px;
+  margin: 30px auto;
+  color: #ffbc00;
+  font-weight: bold;
+  font-size: 13px;
+}
+.forgot-div-email{
+  width: 360px;
+  margin: 0 auto;
+}
+.forgot-div-email--input{
+  width: 100%;
+  outline:none;
+  background: #f1f0f0;
+  border:0;
+  padding: 0px 0px 8px 0px;
+  border-bottom: 1px solid #c5c2c2;
+}
+
+.forgot-div-email--input:focus{
+  border-bottom: 2px solid #1fbe6d;
+}
+.forgot-div-resetbtn{
+  width: 360px;
+  margin: 5% auto auto auto;
+  text-align: center;
+}
+.forgot-div-resetbtn--button:hover{
+  background-color: #d8b657;
+  transition: 0.5s;
+}
+.forgot-div-resetbtn--button{
+  width: 150px;
+  background-color:#ffbc00;
+  border: 0;
+  outline: none;
+  padding: 3%;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+}
+.forgot-div-back{
+  color:blue;
+  text-align: center;
+  margin: 3% 0px;
+}
+.forgot-div-back--a{
+  text-decoration: none;
+  color: #00a8ff;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.or{
+    text-align: center;
+    font-weight: bold;
+    color: blue;
+    padding: 5% 0%;
+}
+  </style>
+  <script>
+    $(document).ready(function(){
+      $(".signup-div").hide();
+      $(".forgot-div").hide();
+      $(".login-div-signuplink").click(function(){
+        $(".login-div").hide();
+        $(".signup-div").show();
+      });
+      $(".login-div-forget").click(function(){
+        $(".login-div").hide();
+        $(".forgot-div").show();
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="loginpage-header">
+    <div class="loginpage-headerimg">
+      <img src="E:\Flyer\flyerlogo.jpg" class="loginpage-headerimg--img">
+    </div>
+  </div>
+    <form>
+      <div class="login-div shadowborder">
+        <div class="login-div-header">
+          <h1>Log-In</h1>
+        </div>
+        <div class="login-div-username">
+          <input type="text" class="login-div-username--input" placeholder="Email/username" name="" value="" required>
+        </div>
+        <div class="login-div-password">
+          <input type="password" class="login-div-username--input" placeholder="Password" name="" value="" required>
+        </div>
+        <div class="login-div-loginbtn">
+          <button class="login-div-loginbtn--button">Log-In</button>
+        </div>
+        <div class="login-div-forget">
+          <p>Forgot password ?</p>
+        </div>
+        <div class="login-div-signuplink">
+          <p>No Account yet? Create one</p>
+        </div>
+      </div>
+      <div class="signup-div shadowborder">
+        <div class="signup-div-header">
+          <h1>Register New Account</h1>
+        </div>
+        <div class="signup-div-fname">
+          <input type="text" class="signup-div-fname--input" placeholder="First Name" required>
+        </div>
+        <div class="signup-div-lname">
+          <input type="text" class="signup-div-lname--input" placeholder="Last Name">
+        </div>
+        <div class="signup-div-gender">
+          <span class="signup-div-gender-label">Gender</span>
+          <input type="radio" name="gender" value="Male" class="signup-div-gender-radio" checked required>Male
+          <input type="radio" name="gender" value="Female" class="signup-div-gender-radio" required>Female
+        </div>
+        <div class="signup-div-dob">
+          <span class="signup-div-dob-label">Date of Birth</span>
+          <input type="date" class="signup-div-dob-label--input" placeholder="dob" required>
+        </div>
+        <div class="signup-div-email">
+          <input type="email" class="signup-div-email--input" placeholder="Email-Id" required>
+        </div>
+        <div class="signup-div-mobile">
+          <input type="number" class="signup-div-mobile--input" placeholder="Mobile number" required>
+        </div>
+        <div class="signup-div-password">
+          <input type="password" class="signup-div-password--input" placeholder="Password" required>
+        </div>
+        <div class="signup-div-register">
+          <button type="submit" class="signup-div-register--button">Register</button>
+        </div>
+        <div class="signup-div-register-backbtn">
+          <a href="E:\Flyer\login\login.html" class="signup-backbtn">back</a>
+        </div>
+      </div>
+      <div class="forgot-div shadowborder">
+        <div class="forgot-div-header1">
+          <h1>Forgot Password?</h1>
+        </div>
+        <div class="forgot-div-header2">
+          <p>We just need your registered email id to send you your password reset instructions</p>
+        </div>
+        <div class="forgot-div-email">
+          <input type="email" class="forgot-div-email--input" placeholder="Email">
+        </div>
+        <div class="forgot-div-resetbtn">
+          <button type="submit" class="forgot-div-resetbtn--button">Reset Password</button>
+        </div>
+        <div class="forgot-div-back">
+          <a class="forgot-div-back--a" href="E:\Flyer\login\login.html">Back</a>
+        </div>
+      </div>
+    </form>
+</body>
+</html>

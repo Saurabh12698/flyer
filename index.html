@@ -1,0 +1,191 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<title>
+    Login
+</title>
+<style>
+
+*{
+    margin: 0;
+    padding: 0;
+}    
+
+a{
+    text-decoration: none;
+    margin:0;
+    padding: 0;
+    color:inherit;
+}
+.flyermob-topbar{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    position: fixed;
+    top:0;
+    background: #ffbc00;
+    font-family: 'Arvo', serif;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+ .flyermob-topbar-logo{
+    width: 40%;
+    padding: 2% 3%;
+    font-size: 21px;
+    font-weight: bold;
+    color: white;
+} 
+
+.flyermob-topbarnav{
+    display: flex;
+    width: 60%;
+    justify-content: flex-end;
+}
+
+.flyermob-topbarnav-item{
+    padding: 5% 5%;
+    font-size: 20px;
+    color: white;
+}
+
+/* @media screen and (min-width:320px){
+    .flyermob-topbar-logo{
+    width: 50%;
+    padding: 5%;
+    font-size: 21px;
+    font-weight: bold;
+    color: white;
+}
+} */
+
+.flyermob-bottombar{
+    position: fixed;
+    bottom:0;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    z-index: 200;
+    background: #ffbc00;
+}
+
+.flyermob-bottombar-item{
+    font-size: 20px;
+    width: 20%;
+    color: white;
+    padding: 3% 7%;
+}
+
+.flyermob-uploadbar{
+    width:100%;
+    height: 50px;
+    background: #c3c0c05c;
+    display: flex;
+    position: fixed;
+    bottom: -80px;
+    padding: 5% 0%;
+}
+
+.flyermob-uploadbar-items{
+    width: 20%;
+    font-size: 30px;
+    color: grey;
+    background: #d8d1d1;
+    text-align: center;
+    margin: 0% 3%;
+    padding: 3% 0%;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.flyermob-uploadextradiv{
+    width: 100px;
+    position: absolute;
+    top: -30px;
+    height: 30px;
+    background: #e9e8e8;
+    border-radius: 0px 25px 0px 0px;
+    font-family: 'Arvo', serif;
+    box-sizing: border-box;
+    padding: 2% 4%;
+    color: grey;
+    font-weight: bold;
+}
+</style>
+</head>
+<body>
+    <div class="flyermob-topbar">
+        <div class="flyermob-topbar-logo">
+            <p>FLYER</p>
+        </div>
+        <div class="flyermob-topbarnav">
+            <div class="flyermob-topbarnav-item">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="flyermob-topbarnav-item">
+                <i class="fas fa-bell"></i>
+            </div>
+            <div class="flyermob-topbarnav-item">
+                <i class="fas fa-comment-alt"></i>
+            </div>
+            <div class="flyermob-topbarnav-item">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </div>
+    <div class="flyermob-bottombar">
+        <div class="flyermob-bottombar-item">
+            <i class="fas fa-newspaper"></i>
+        </div>
+        <div class="flyermob-bottombar-item">
+            <i class="fas fa-users"></i>
+        </div>
+        <div class="flyermob-bottombar-item" id="upload-id">
+            <i class="fas fa-plus-circle"></i>
+        </div>
+        <div class="flyermob-bottombar-item">
+            <i class="fas fa-video"></i>
+        </div>
+        <div class="flyermob-bottombar-item">
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </div>
+    <div class="flyermob-uploadbar">
+        <div class="flyermob-uploadextradiv">
+            <p>Upload</p>
+        </div>
+        <div class="flyermob-uploadbar-items">
+            <a href="E:\Flyer\imageupload.html ">
+                <i class="fas fa-camera"></i>
+            </a>
+        </div>
+        <div class="flyermob-uploadbar-items">
+            <i class="fas fa-lightbulb"></i>
+        </div>
+        <div class="flyermob-uploadbar-items">
+            <i class="fas fa-video"></i>
+        </div>
+        <div class="flyermob-uploadbar-items">
+            <i class="fas fa-users"></i>
+        </div>
+    </div>
+
+<script>
+$(document).ready(function(){
+  $("#upload-id").click(function(){
+      if($(".flyermob-uploadbar").css('bottom') == '-80px'){
+          $(".flyermob-uploadbar").animate({bottom:'40px'},1000);
+      }
+      else
+      {
+          $(".flyermob-uploadbar").animate({bottom:'-80px'},1000);
+      }
+    });
+});    
+</script>
+</body>
+</html>    
