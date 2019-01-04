@@ -1,0 +1,144 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+p{
+    padding: 0;
+    margin:0;
+}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height *//* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    -webkit-animation-name: fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    position: absolute;
+    background-color: #fefefe;
+    width: 95%;
+    height: 85%;
+    margin: auto;
+    top: 0; left: 0; bottom: 0; right: 0;
+    /* -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s; */
+  }
+  
+  /* The Close Button */
+  .close {
+    position: absolute;
+    top:0;
+    right:0;
+    padding: 1% 2%;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Add Animation */
+  @-webkit-keyframes slideIn {
+    from {bottom: -300px; opacity: 0} 
+    to {bottom: 0; opacity: 1}
+  }
+  
+  @keyframes slideIn {
+    from {bottom: -300px; opacity: 0}
+    to {bottom: 0; opacity: 1}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+  }
+
+  .imageupload-form-header{
+    width: 100%;
+    height: 40px;
+    background: #d0cece;
+}
+
+.imageupload-caption-section{
+    display: flex;
+    padding: 2%;
+}
+
+.imageupload-caption-userpic{
+    height: 45px;
+    width: 45px;
+}
+
+.imageupload-caption-userpic--img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.imageupload-caption-input{
+    background-color: white;
+    border: 1px solid darkgray;
+    width: 80%;   
+    outline: 0;
+    padding: 5px 5px;
+    margin-left: 2%;
+    resize: none;
+    word-wrap: break-word;
+}
+
+.imageupload-caption-input :empty:before {
+    content:attr(data-placeholder);
+    color:gray;
+}
+
+.imageupload-button-section{
+    margin-top: 10px;
+    padding: 2% 2%;
+    border-top: 1px solid #d0cece;
+    border-bottom: 1px solid #d0cece;
+}
+
+.imageupload-button{
+    width: 65px;
+    background: #dfd1ab;
+    border-radius: 15px;
+    display: flex;
+    padding: 2% 3%;
+    justify-content: center;
+    font-size: 15px;
+    font-family: 'Happy Monkey', cursive;
+}
+
+.icon{
+    padding: 2% 0%;
+}
+.imageupload-button--name{
+    padding: 0% 5%;
+    font-weight: bold;
+}
+  
+.imageupload-bottom-section{
+    
+}
