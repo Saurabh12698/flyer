@@ -7,6 +7,10 @@ p{
     padding: 0;
     margin:0;
 }
+
+body{
+    font-family: 'Happy Monkey', cursive;
+}
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -26,24 +30,29 @@ p{
   /* Modal Content */
   .modal-content {
     position: absolute;
+    display: flex;
+    flex-direction: column;
+
     background-color: #fefefe;
-    width: 95%;
-    height: 85%;
+    width: 100%;
+    height: 100%;
+    left:0;
+    right: 0;
     margin: auto;
-    top: 0; left: 0; bottom: 0; right: 0;
-    /* -webkit-animation-name: slideIn;
+
+    -webkit-animation-name: slideIn;
     -webkit-animation-duration: 0.4s;
     animation-name: slideIn;
-    animation-duration: 0.4s; */
+    animation-duration: 0.4s;
   }
   
   /* The Close Button */
   .close {
     position: absolute;
-    top:0;
-    right:0;
-    padding: 1% 2%;
-    font-size: 28px;
+    top: 0;
+    left: 0;
+    padding: 4.5% 3%;
+    font-size: 16px;
     font-weight: bold;
   }
   
@@ -77,7 +86,9 @@ p{
 
   .imageupload-form-header{
     width: 100%;
-    height: 40px;
+    font-size: 16px;
+    padding: 4% 12%;
+    font-weight: bold;
     background: #d0cece;
 }
 
@@ -99,28 +110,22 @@ p{
 
 .imageupload-caption-input{
     background-color: white;
-    border: 1px solid darkgray;
-    width: 80%;   
+    width: 80%;
+    max-height: 15%;
     outline: 0;
+    overflow: auto;
     padding: 5px 5px;
     margin-left: 2%;
     resize: none;
     word-wrap: break-word;
+
 }
 
-.imageupload-caption-input :empty:before {
-    content:attr(data-placeholder);
-    color:gray;
-}
 
-.imageupload-button-section{
-    margin-top: 10px;
-    padding: 2% 2%;
-    border-top: 1px solid #d0cece;
-    border-bottom: 1px solid #d0cece;
+.imageupload-preview{
+    padding: 6% 2%;
 }
-
-.imageupload-button{
+/* .imageupload-button{
     width: 65px;
     background: #dfd1ab;
     border-radius: 15px;
@@ -129,6 +134,29 @@ p{
     justify-content: center;
     font-size: 15px;
     font-family: 'Happy Monkey', cursive;
+} */
+
+
+.flyermob-imageupload-image{
+    width: 30%;
+    position: relative;
+}
+
+.uploaded-image-preview{
+    width: 100%;
+}
+
+.flyr-upload-icon{
+    position:absolute;
+    top: 31%;
+    left: 38%;
+}
+
+.file-upload{
+    display: none;
+}
+.file-upload-button{
+    font-size: 25px;
 }
 
 .icon{
@@ -140,5 +168,156 @@ p{
 }
   
 .imageupload-bottom-section{
-    
+    display: flex;
+    flex-direction: column;
+}
+
+.imageupload-type-check{
+    display: flex;
+    padding: 3% 2% 5% 3%;
+    border-top: 1px solid #d0cece;
+    box-shadow: 0px 1px 1px #b9b5b9;
+}
+
+.imageupload-type-name{
+    font-weight: bold;
+}
+.flyr-upload-community-list{
+    overflow-y: auto;
+}
+
+.flyr-upload-community-list-item{
+    display: flex;
+}
+
+.flyr-upload-community-image{
+    height: 45px;
+    width: 45px;
+    margin-left:17px;
+}
+
+.flyr-upload-community-image img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.flyr-upload-community-name{
+    padding: 3% 2% 2% 2%;
+    width: 70%;
+    color: #888491;
+    font-size: 16px;
+}
+
+
+/*...................label..................*/
+.flyermob-checkbox-container {
+    display: flex;
+    width:100%;
+    padding: 2% 0%;
+    position: relative;
+    margin-top: 0px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.flyermob-checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* .container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+
+.container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 3px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}  */
+
+/* Create a custom checkbox */
+.flyermob-checkbox-checkmark {
+  position: absolute;
+  top:0;
+  left:0;
+  height: 100%;
+  display:none;
+  width: 12px;
+  background-color: #eee;
+}
+
+
+/* When the checkbox is checked, add a blue background */
+.flyermob-checkbox-container input:checked ~ .flyermob-checkbox-checkmark {
+  display:flex;
+  background-color: #2196F3;
+}
+
+/* Style the checkmark/indicator */
+.flyermob-checkbox-container .flyermob-checkbox-checkmark:after {
+  left: -9999px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.selected{
+    background: #eeeeee;
+}
+
+.imageupload-postbutton{
+    /* position: absolute;
+    bottom: 0; */
+    flex-shrink: 0;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 2% 2%;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, .3);
+    background: white;
+}
+
+.imageupload-postbutton--button{
+    width: 100%;
+    padding: 3% 0%;
+    font-family: inherit;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    border: 1px solid #ffdf88;
+    background: linear-gradient(to bottom, #fff1ca -16%, #ffbc00 100%);
 }
